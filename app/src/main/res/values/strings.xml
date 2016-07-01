@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">Fidelize</string>
+    <string name="title_act_new_elector">New Elector</string>
+    <string name="new_name_elector">Name: </string>
+    <string name="new_date_birth">Date Birth: </string>
+    <string name="bt_new_title">Title</string>
+    <string name="bt_new_address">Address</string>
+    <string name="new_sex">Sex:</string>
+    <string name="bt_date_birth">Date Birth</string>
+    <string name="bt_save">Save</string>
+    <string name="new_scholarity">Scholarity: </string>
+    <string name="rbt_male">Male</string>
+    <string name="rbt_female">Female</string>
+    <string name="new_is_affiliate">Affiliate: </string>
+    <string name="rbt_yes">Yes</string>
+    <string name="rbt_not">Not</string>
+    <string name="et_title_number">Title</string>
+    <string name="et_title_zone">Zone</string>
+    <string name="et_title_section">Section</string>
+    <string name="et_new_stret">Street</string>
+    <string-array name="spin_scholarity">
+        <item>Higher Education</item>
+        <item>High School</item>
+        <item>Elementary School</item>
+        <item>Not Literate</item>
+    </string-array>
+</resources>

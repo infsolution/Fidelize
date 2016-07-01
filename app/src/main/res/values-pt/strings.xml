@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Fidelize</string>
+    <string name="title_act_new_elector">Novo Eleitor</string>
+    <string name="new_name_elector">Nome: </string>
+    <string name="new_date_birth">Data de Nascimento: </string>
+    <string name="bt_new_title">Titulo</string>
+    <string name="bt_new_address">Endereço</string>
+    <string name="new_sex">Sexo:</string>
+    <string name="bt_date_birth">Data de Nascimento</string>
+    <string name="bt_save">Salvar</string>
+    <string name="new_scholarity">Escolaridade: </string>
+    <string name="rbt_male">Masculino</string>
+    <string name="rbt_female">Feminino</string>
+    <string name="new_is_affiliate">Filiado: </string>
+    <string name="rbt_yes">Sim</string>
+    <string name="rbt_not">Não</string>
+    <string name="et_title_number">Titulo</string>
+    <string name="et_title_zone">Zona</string>
+    <string name="et_title_section">Seção</string>
+    <string-array name="spin_scholarity">
+        <item>Superior</item>
+        <item>Médio</item>
+        <item>Fundamental</item>
+        <item>Não Alfabetizado</item>
+    </string-array>
+</resources>
