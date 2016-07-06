@@ -49,10 +49,10 @@ public class FidelizeMainActivity extends AppCompatActivity {
         Title title = goTitle();
         eleitor.setTitle(title);
         TitleDAO tDao = new TitleDAO(this);
-        boolean ok = tDao.insertTitle(eleitor,eleitor.getTitle());
+        long ok = tDao.insertTitle(eleitor.getTitle());
         AlertDialog.Builder builder = new AlertDialog.Builder(this);
         tDao.close();
-        if(ok){
+        if(ok!=0){
             builder.setMessage(resu);
         }else{
             builder.setMessage("Houve um problema.");

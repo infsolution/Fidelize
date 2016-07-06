@@ -1,6 +1,7 @@
 package infsolution.com.br.fidelize;
 
 import android.app.FragmentTransaction;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,6 +11,7 @@ import android.widget.RadioGroup;
 import android.widget.Spinner;
 
 import infsolution.com.br.fidelize.dialogs.DateTime;
+import infsolution.com.br.fidelize.dialogs.DialogTitle;
 
 public class NewElectorActivity extends AppCompatActivity {
     Button btDate;
@@ -44,5 +46,11 @@ public class NewElectorActivity extends AppCompatActivity {
         DateTime date = new DateTime(v);
         FragmentTransaction ft = getFragmentManager().beginTransaction();
         date.show(ft,"Data");
+    }
+
+    public void newTitle(View v){
+        DialogTitle openDialog = new DialogTitle();
+        FragmentTransaction ft = getFragmentManager().beginTransaction();
+        openDialog.show(ft,"Titulo");
     }
 }

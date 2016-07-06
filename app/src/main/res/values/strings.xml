@@ -18,6 +18,8 @@
     <string name="et_title_zone">Zone</string>
     <string name="et_title_section">Section</string>
     <string name="et_new_stret">Street</string>
+    <string name="cancel">Cancel</string>
+    <string name="ok">OK</string>
     <string-array name="spin_scholarity">
         <item>Higher Education</item>
         <item>High School</item>

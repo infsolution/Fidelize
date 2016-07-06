@@ -147,7 +147,6 @@
                     android:text="@string/bt_new_title"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
-
                     android:onClick="newTitle"
                     />
                 <Button

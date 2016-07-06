@@ -14,6 +14,7 @@
         android:layout_gravity="center"
         />
     <EditText
+        android:id="@+id/dlg_title_num"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/et_title_number"
@@ -24,6 +25,7 @@
         android:textSize="22sp"
         />
     <EditText
+        android:id="@+id/dlg_title_zone"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/et_title_zone"
@@ -34,6 +36,7 @@
         android:textSize="22sp"
         />
     <EditText
+        android:id="@+id/dlg_title_sec"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/et_title_section"

@@ -28,22 +28,17 @@ public class TitleDAO {
         dao.close();
     }
 
-    public boolean insertTitle(Elector elector, Title title ){
-        boolean ret = false;
-        long idEle = pullIdElector(elector);
-        if(idEle!=0){
+    public long insertTitle(Title title ){
+        long ret=0;
             if(!titleIsCad(title)){
                 ContentValues cv = new ContentValues();
                 cv.put(DAO.prefixe+"number",title.getNumber());
                 cv.put(DAO.prefixe+"zone",title.getZone());
                 cv.put(DAO.prefixe+"section",title.getSection());
-                cv.put(DAO.prefixe+"id_elector",idEle);
-                dao.getWritableDatabase().insert(DAO.prefixe + "title", null, cv);
-                ret = true;
+                ret = dao.getWritableDatabase().insert(DAO.prefixe + "title", null, cv);
+            }else{
+                ret = 112;
             }
-        }else{elector.setTitle(null);
-            ret=false;
-        }
         return ret;
     }
     public boolean titleIsCad(Title title){

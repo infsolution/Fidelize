@@ -18,6 +18,8 @@
     <string name="et_title_number">Titulo</string>
     <string name="et_title_zone">Zona</string>
     <string name="et_title_section">Seção</string>
+    <string name="cancel">Cancelar</string>
+    <string name="ok">OK</string>
     <string-array name="spin_scholarity">
         <item>Superior</item>
         <item>Médio</item>
