@@ -3,17 +3,16 @@ package infsolution.com.br.fidelize.model;
 /**
  * Created by Cicero on 05/06/2016.
  */
-public class Adress {
+public class Address {
     private long id;
     private String street;
-    private int number;
+    private String number;
     private String district;
     private String city;
     private String state;
     private String country;
     private String zipCode;
-    private String complement;
-    public Adress(String street, int number,String district){
+    public Address(String street, String number, String district){
         this.street=street;
         this.number=number;
         this.district=district;
@@ -31,7 +30,7 @@ public class Adress {
         this.district = district;
     }
 
-    public void setNumber(int number) {
+    public void setNumber(String number) {
         this.number = number;
     }
 
@@ -42,7 +41,7 @@ public class Adress {
         return street;
     }
 
-    public int getNumber() {
+    public String getNumber() {
         return number;
     }
 
@@ -80,14 +79,6 @@ public class Adress {
 
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
-    }
-
-    public String getComplement() {
-        return complement;
-    }
-
-    public void setComplement(String complement) {
-        this.complement = complement;
     }
 
     @Override

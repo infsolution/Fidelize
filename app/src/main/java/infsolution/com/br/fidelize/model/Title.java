@@ -57,6 +57,6 @@ public class Title {
 
     @Override
     public String toString() {
-        return getNumber()+"\nZona: "+getZone()+"\nSeção: "+getSection();
+        return "Titulo: "+getNumber()+"\nZona: "+getZone()+"\nSeção: "+getSection();
     }
 }

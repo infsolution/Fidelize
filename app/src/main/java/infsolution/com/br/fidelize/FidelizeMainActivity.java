@@ -36,30 +36,6 @@ public class FidelizeMainActivity extends AppCompatActivity {
 
     }
 
-    public void insert(View v){
-        String nomeEle = this.nomeEdit.getText().toString();
-        String partyEle = this.partidoEdit.getText().toString();
-        String escolar = this.escolaEdit.getText().toString();
-        eleitor = new Elector(nomeEle);
-        eleitor.setParty(partyEle);
-        eleitor.setScholarity(escolar);
-        ElectorDAO dao = new ElectorDAO(this);
-        String resu = dao.insert(eleitor);
-        dao.close();
-        Title title = goTitle();
-        eleitor.setTitle(title);
-        TitleDAO tDao = new TitleDAO(this);
-        long ok = tDao.insertTitle(eleitor.getTitle());
-        AlertDialog.Builder builder = new AlertDialog.Builder(this);
-        tDao.close();
-        if(ok!=0){
-            builder.setMessage(resu);
-        }else{
-            builder.setMessage("Houve um problema.");
-        }
-
-        builder.show();
-    }
 
     public Title goTitle(){
         String numTitle = this.title.getText().toString();

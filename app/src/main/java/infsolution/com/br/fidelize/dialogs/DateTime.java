@@ -15,6 +15,7 @@ import java.util.Calendar;
  */
 public class DateTime extends DialogFragment implements DatePickerDialog.OnDateSetListener {
     private Button btDate;
+    public String date="";
 
     public DateTime(View v){
         btDate = (Button)v;
@@ -33,8 +34,11 @@ public class DateTime extends DialogFragment implements DatePickerDialog.OnDateS
 
     @Override
     public void onDateSet(DatePicker view, int year, int month, int day) {
-        String date = day+" - "+(month+1)+" - "+year;
-        btDate.setText(date);
+         this.date = day+" - "+(month+1)+" - "+year;
+        btDate.setText(this.date);
+    }
+    public String getDate(){
+        return this.date;
     }
 
 }

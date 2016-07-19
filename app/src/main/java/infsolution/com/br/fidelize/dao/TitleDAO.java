@@ -4,6 +4,7 @@ import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import java.sql.SQLException;
 
@@ -30,6 +31,7 @@ public class TitleDAO {
 
     public long insertTitle(Title title ){
         long ret=0;
+        //System.out.println("O VALOR PASSADO COMO PARAMENTRO É: "+title.toString());
             if(!titleIsCad(title)){
                 ContentValues cv = new ContentValues();
                 cv.put(DAO.prefixe+"number",title.getNumber());
@@ -37,17 +39,21 @@ public class TitleDAO {
                 cv.put(DAO.prefixe+"section",title.getSection());
                 ret = dao.getWritableDatabase().insert(DAO.prefixe + "title", null, cv);
             }else{
-                ret = 112;
+                ret = -1;
             }
+
         return ret;
     }
     public boolean titleIsCad(Title title){
-        boolean res = false;
-        String sql = "SELECT * FROM fid_title WHERE fid_number = "+title.getNumber()+";";
+        boolean res=false;
+        String sql = "SELECT fid_id_title FROM fid_title WHERE fid_number = '"+title.getNumber()+"';";
         Cursor c = dao.getReadableDatabase().rawQuery(sql, null);
-        if(c.moveToNext()){
-            res=true; }
-        return res;
+        if(c.moveToFirst()){
+            res=true;
+    }
+       // System.out.println("O VALOR BOOLEANO DO TITLEISCAD É : "+res+" E O VALOR DE BUSCA É: "+title.toString());
+
+    return res;
     }
     public long pullIdElector(Elector elector){
         long idElector=0;

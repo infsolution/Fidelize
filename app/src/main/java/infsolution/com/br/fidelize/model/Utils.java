@@ -42,7 +42,7 @@ public class Utils {
             elec.setDateBirth(sdf.format(date));
             elec.setScholarity(jOArray.getString("fid_scholarity"));
             elec.setParty(jOArray.getString("fid_party"));
-            elec.setAffiliate(jOArray.getBoolean("fid_affilate"));
+            elec.setAffiliate(jOArray.getInt("fid_affilate"));
             elec.setSex(jOArray.getString("fid_sex"));
             electors.add(elec);
             }

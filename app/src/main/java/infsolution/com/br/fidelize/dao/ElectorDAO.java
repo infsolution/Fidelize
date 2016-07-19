@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import infsolution.com.br.fidelize.FidelizeMainActivity;
+import infsolution.com.br.fidelize.model.Address;
 import infsolution.com.br.fidelize.model.Elector;
 import infsolution.com.br.fidelize.model.Title;
 
@@ -30,20 +31,20 @@ public class ElectorDAO {
         dao.close();
     }
 
-    public String insert(Elector elector){
-        String result ="Eleitor já consta em sua base de dados";
-       if(!isElector(elector.getName())){
+    public long insert(Elector elector){
+        long result =0;
+       if(!isElector(elector.getName(),elector.getAddress().getId())){
             ContentValues cv = new ContentValues();
-            cv.put("fid_name",elector.getName());
-           cv.put("fid_date_birth", String.valueOf(elector.getDateBirth()));
-           cv.put("fid_scholarity",elector.getScholarity());
-            cv.put("fid_party",elector.getParty());
-           cv.put("fid_affiliate",elector.isFidelity());
-           cv.put("fid_sex",elector.getSex());
-           cv.put("fid_id_campaigner", elector.getCampaigner());
-           cv.put("fid_id_candidate", elector.getCandidate());
-            dao.getWritableDatabase().insert("fid_elector", null, cv);
-            result="Eleitor cadastrado com sucesso!";
+            cv.put(DAO.prefixe+"name",elector.getName());
+           cv.put(DAO.prefixe+"date_birth", String.valueOf(elector.getDateBirth()));
+           cv.put(DAO.prefixe+"affiliate",elector.getAffiliate());
+           cv.put(DAO.prefixe+"sex",elector.getSex());
+           cv.put(DAO.prefixe+"scholarity",elector.getScholarity());
+           cv.put(DAO.prefixe+"id_title",elector.getTitle().getId());
+           cv.put(DAO.prefixe+"id_address",elector.getAddress().getId());
+           cv.put(DAO.prefixe+"id_campaigner", elector.getCampaigner());
+           cv.put(DAO.prefixe+"id_candidate", elector.getCandidate());
+           result=dao.getWritableDatabase().insert(DAO.prefixe+"elector", null, cv);
            dao.close();
        }
         return result;
@@ -55,32 +56,61 @@ public class ElectorDAO {
         while (c.moveToNext()) {
             int id = c.getInt(c.getColumnIndex("fid_id_elector"));
             String name = c.getString(c.getColumnIndex("fid_name"));
-            String party = c.getString(c.getColumnIndex("fid_party"));
-            String scholarity = c.getString(c.getColumnIndex("fid_scholarity"));
+            String dtBirth = c.getString(c.getColumnIndex("fid_date_birth"));
             int affiliat = c.getInt(c.getColumnIndex("fid_affiliate"));
+            String sex = c.getString(c.getColumnIndex("fid_sex"));
+            String scholarity = c.getString(c.getColumnIndex("fid_scholarity"));
+            long idTitle = c.getLong(c.getColumnIndex("fid_id_title"));
+            long idAddres = c.getLong(c.getColumnIndex("fid_id_address"));
             long idCampaigner = c.getLong(c.getColumnIndex("fid_id_campaigner"));
             long idCandidate = c.getLong(c.getColumnIndex("fid_id_candidate"));
             dao.close();
             Elector elector = new Elector(name);
             elector.setId(id);
-            elector.setParty(party);
             elector.setScholarity(scholarity);
-            String sqlT = "SELECT * FROM fid_title WHERE fid_id_elector = "+id+";";
+            elector.setDateBirth(dtBirth);
+            elector.setAffiliate(affiliat);
+            elector.setSex(sex);
+            elector.setCampaigner(idCampaigner);
+            elector.setCandidate(idCandidate);
+            String sqlT = "SELECT * FROM fid_title WHERE fid_id_title = "+idTitle+";";
             Cursor cT = dao.getReadableDatabase().rawQuery(sqlT, null);
             if(cT.moveToFirst()){
             String title = cT.getString(cT.getColumnIndex("fid_number"));
             String zone = cT.getString(cT.getColumnIndex("fid_zone"));
             String section = cT.getString(cT.getColumnIndex("fid_section"));
+                dao.close();
             Title titleE = new Title(title,zone,section);
             elector.setTitle(titleE);}
+
+            String sqlA = "SELECT * FROM fid_address WHERE fid_id_address = "+idAddres+";";
+            Cursor cA = dao.getReadableDatabase().rawQuery(sqlA,null);
+            if(cA.moveToFirst()){
+                long idA = cA.getLong(cA.getColumnIndex("fid_id_address"));
+                String street = cA.getString(cA.getColumnIndex("fid_street"));
+                String num = cA.getString(cA.getColumnIndex("fid_number"));
+                String distr = cA.getString(cA.getColumnIndex("fid_district"));
+                String city = cA.getString(cA.getColumnIndex("fid_city"));
+                String state = cA.getString(cA.getColumnIndex("fid_state"));
+                String country = cA.getString(cA.getColumnIndex("fid_country"));
+                String zip = cA.getString(cA.getColumnIndex("fid_zip_code"));
+                Address address = new Address(street,num,distr);
+                address.setId(idA);
+                address.setCity(city);
+                address.setState(state);
+                address.setCountry(country);
+                address.setZipCode(zip);
+                elector.setAddress(address);
+                dao.close();
+            }
             electors.add(elector);
         }
         return electors;
     }
 
-    public boolean isElector(String elector){
+    public boolean isElector(String elector, long address){
         boolean res = true;
-        String sql="SELECT * FROM fid_elector WHERE fid_name = '"+elector+"';";
+        String sql="SELECT * FROM fid_elector WHERE fid_name = '"+elector+"' and fid_id_address = "+address+";";
         Cursor c = dao.getReadableDatabase().rawQuery(sql,null);
         if(!c.moveToNext()){
          res=false;

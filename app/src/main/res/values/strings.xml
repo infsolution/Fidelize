@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Fidelize</string>
     <string name="title_act_new_elector">New Elector</string>
-    <string name="new_name_elector">Name: </string>
+    <string name="new_name_elector">Name </string>
     <string name="new_date_birth">Date Birth: </string>
     <string name="bt_new_title">Title</string>
     <string name="bt_new_address">Address</string>
@@ -17,13 +17,77 @@
     <string name="et_title_number">Title</string>
     <string name="et_title_zone">Zone</string>
     <string name="et_title_section">Section</string>
-    <string name="et_new_stret">Street</string>
+    <string name="et_new_street">Street</string>
     <string name="cancel">Cancel</string>
     <string name="ok">OK</string>
+    <string name="et_new_number">Nº</string>
+    <string name="new_district">District</string>
+    <string name="new_state">State</string>
+    <string name="new_city">City</string>
+    <string name="txt_address">Address</string>
+    <string name="new_zip_code">Zip Code</string>
+    <string name="msg_addres_save">Addres Saved</string>
+    <string name="msg_oper_cancel">Operation Canceled</string>
+    <string name="msg_cacel">Canceled</string>
+
+    <string name="word_elector">ELECTOR</string>
+    <string name="word_registered">REGISTERED</string>
+    <string name="word_register">REGISTER</string>
+    <string name="word_with">WITH</string>
+    <string name="word_sucess">SUCESS</string>
+
+    <string name="string_already_registered_elector">Already registered elector!</string>
+
     <string-array name="spin_scholarity">
+        <item>Scholarity</item>
         <item>Higher Education</item>
         <item>High School</item>
         <item>Elementary School</item>
         <item>Not Literate</item>
+    </string-array>
+    <string-array name="spin_local">
+        <item>Local Type</item>
+        <item>Avenue</item>
+        <item>Alley</item>
+        <item>Countryside</item>
+        <item>Highway</item>
+        <item>Road</item>
+        <item>Slope</item>
+        <item>Street</item>
+        <item>Way</item>
+    </string-array>
+    <string-array name="spin_state">
+        <item>State</item>
+        <item>AC-Acre</item>
+        <item>AL-Alagoas</item>
+        <item>AP-Amapá</item>
+        <item>AM-Amazonas</item>
+        <item>BA-Bahia</item>
+        <item>CE-Ceara</item>
+        <item>DF-Distrito Federal</item>
+        <item>ES-Espírito Santo</item>
+        <item>GO-Goiás</item>
+        <item>MA-Maranhão</item>
+        <item>MT-Mato Grosso</item>
+        <item>MS-Mato Grosso do Sul</item>
+        <item>MG-Minas Gerais</item>
+        <item>PA-Pará</item>
+        <item>PB-Paraíba</item>
+        <item>PR-Paraná</item>
+        <item>PE-Pernambuco</item>
+        <item>PI-Piauí</item>
+        <item>RJ-Rio de Janeiro</item>
+        <item>RN-Rio Grande do Norte</item>
+        <item>RS-Rio Grande do Sul</item>
+        <item>RO-Rondônia</item>
+        <item>RR-Roraima</item>
+        <item>SC-Santa Catarina</item>
+        <item>SP-São Paulo</item>
+        <item>SE-Sergipe</item>
+        <item>TO-Tocantins</item>
+    </string-array>
+    <string-array name="spin_country">
+        <item>Country</item>
+        <item>Brasil</item>
     </string-array>
 </resources>

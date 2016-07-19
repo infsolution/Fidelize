@@ -2,7 +2,7 @@
 <resources>
     <string name="app_name">Fidelize</string>
     <string name="title_act_new_elector">Novo Eleitor</string>
-    <string name="new_name_elector">Nome: </string>
+    <string name="new_name_elector">Nome </string>
     <string name="new_date_birth">Data de Nascimento: </string>
     <string name="bt_new_title">Titulo</string>
     <string name="bt_new_address">Endereço</string>
@@ -18,12 +18,76 @@
     <string name="et_title_number">Titulo</string>
     <string name="et_title_zone">Zona</string>
     <string name="et_title_section">Seção</string>
+    <string name="et_new_street">Rua</string>
     <string name="cancel">Cancelar</string>
     <string name="ok">OK</string>
+    <string name="et_new_number">Nº</string>
+    <string name="new_district">Bairro</string>
+    <string name="new_state">State</string>
+    <string name="new_city">Cidade</string>
+    <string name="txt_address">Endereço</string>
+    <string name="new_zip_code">Cep</string>
+    <string name="msg_addres_save">Endereço Salvo</string>
+    <string name="msg_oper_cancel">Operação Cancelada</string>
+    <string name="msg_cacel">Cancelado</string>
+
+    <string name="word_elector">ELEITOR</string>
+    <string name="word_registered">CADASTRADO</string>
+    <string name="word_register">CADASTRO</string>
+    <string name="word_with">COM</string>
+    <string name="word_sucess">SUCESSO</string>
+
+    <string name="string_already_registered_elector">Eleitor já cadastrado!</string>
+
     <string-array name="spin_scholarity">
+        <item>Escolaridade</item>
         <item>Superior</item>
         <item>Médio</item>
         <item>Fundamental</item>
         <item>Não Alfabetizado</item>
+    </string-array>
+    <string-array name="spin_local">
+        <item>Avenida</item>
+        <item>Beco</item>
+        <item>Caminho</item>
+        <item>Campo</item>
+        <item>Estrada</item>
+        <item>Ladeira</item>
+        <item>Rodovia</item>
+        <item>Rua</item>
+    </string-array>
+    <string-array name="spin_state">
+        <item>Estado</item>
+        <item>AC-Acre</item>
+        <item>AL-Alagoas</item>
+        <item>AP-Amapá</item>
+        <item>AM-Amazonas</item>
+        <item>BA-Bahia</item>
+        <item>CE-Ceara</item>
+        <item>DF-Distrito Federal</item>
+        <item>ES-Espírito Santo</item>
+        <item>GO-Goiás</item>
+        <item>MA-Maranhão</item>
+        <item>MT-Mato Grosso</item>
+        <item>MS-Mato Grosso do Sul</item>
+        <item>MG-Minas Gerais</item>
+        <item>PA-Pará</item>
+        <item>PB-Paraíba</item>
+        <item>PR-Paraná</item>
+        <item>PE-Pernambuco</item>
+        <item>PI-Piauí</item>
+        <item>RJ-Rio de Janeiro</item>
+        <item>RN-Rio Grande do Norte</item>
+        <item>RS-Rio Grande do Sul</item>
+        <item>RO-Rondônia</item>
+        <item>RR-Roraima</item>
+        <item>SC-Santa Catarina</item>
+        <item>SP-São Paulo</item>
+        <item>SE-Sergipe</item>
+        <item>TO-Tocantins</item>
+    </string-array>
+    <string-array name="spin_country">
+        <item>País</item>
+        <item>Brasil</item>
     </string-array>
 </resources>

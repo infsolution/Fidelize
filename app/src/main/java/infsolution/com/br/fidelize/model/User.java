@@ -1,6 +1,6 @@
 package infsolution.com.br.fidelize.model;
 
-import java.util.Date;
+import infsolution.com.br.fidelize.tools.Tools;
 
 /**
  * Created by Cicero on 05/06/2016.
@@ -8,15 +8,17 @@ import java.util.Date;
 abstract class User {
     private long id;
     private String name=null;
-    private Adress adress=null;
+    private Address address =null;
     private Title title=null;
     private String party=null;
     private String sex=null;
     private String scholarity=null;
     private String dateBirth=null;
-    private boolean affiliate=false;
+    private int affiliate=0;
     private long campaigner =0;
     private long candidate=0;
+    private long code=0;
+    private boolean status = false;
 
     public User(String name){
         this.name = name;
@@ -46,12 +48,12 @@ abstract class User {
         this.party = party;
     }
 
-    public Adress getAdress() {
-        return adress;
+    public Address getAddress() {
+        return address;
     }
 
-    public void setAdress(Adress adress) {
-        this.adress = adress;
+    public void setAddress(Address address) {
+        this.address = address;
     }
 
     public Title getTitle() {
@@ -87,11 +89,11 @@ abstract class User {
         this.dateBirth = dateBirth;
     }
 
-    public boolean isAffiliate() {
+    public int getAffiliate() {
         return affiliate;
     }
 
-    public void setAffiliate(boolean affiliate) {
+    public void setAffiliate(int affiliate) {
         this.affiliate = affiliate;
     }
 
@@ -109,5 +111,25 @@ abstract class User {
 
     public void setCandidate(long candidate) {
         this.candidate = candidate;
+    }
+
+    public void setCampaigner(long campaigner) {
+        this.campaigner = campaigner;
+    }
+
+    public long getCode() {
+        return code;
+    }
+
+    public void setCode(long code) {
+        this.code = code;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
     }
 }

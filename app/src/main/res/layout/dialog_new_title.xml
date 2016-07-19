@@ -23,6 +23,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:textSize="22sp"
+        android:inputType="number"
         />
     <EditText
         android:id="@+id/dlg_title_zone"
@@ -34,6 +35,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:textSize="22sp"
+        android:inputType="number"
         />
     <EditText
         android:id="@+id/dlg_title_sec"
@@ -45,6 +47,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginRight="8dp"
         android:textSize="22sp"
+        android:inputType="number"
         />
 
 </LinearLayout>

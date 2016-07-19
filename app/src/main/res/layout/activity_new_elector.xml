@@ -24,20 +24,13 @@
             android:orientation="vertical"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/new_name_elector"
-                android:textSize="16dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                />
+
             <EditText
                 android:id="@+id/et_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="@string/new_name_elector"
-                android:textSize="14dp"
+                android:textSize="18sp"
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 />
@@ -64,6 +57,7 @@
                     android:layout_weight="4"
                     android:text="@string/rbt_male"
                     android:layout_marginLeft="8dp"
+
                     />
                 <RadioButton
                     android:id="@+id/rbt_female"
@@ -72,6 +66,7 @@
                     android:layout_weight="4"
                     android:text="@string/rbt_female"
                     android:layout_marginLeft="8dp"
+
                     />
             </RadioGroup>
             <RadioGroup
@@ -116,14 +111,7 @@
                 android:text="@string/bt_date_birth"
                 android:onClick="newDateBirth"
                 />
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="16dp"
-                android:text="@string/new_scholarity"
-                android:layout_marginLeft="8dp"
-                android:layout_marginRight="8dp"
-                />
+
             <Spinner
 
                 android:id="@+id/spin_scholarity"
@@ -169,9 +157,8 @@
                 android:layout_marginLeft="8dp"
                 android:layout_marginRight="8dp"
                 android:layout_marginBottom="8dp"
-
                 android:text="@string/bt_save"
-                android:onClick="SaveElector"
+                android:onClick="saveElector"
                 />
 
         </LinearLayout>
